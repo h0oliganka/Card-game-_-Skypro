@@ -15,7 +15,7 @@ export function levelPageRenderer({ app }) {
         () =>
             (document.querySelector('.card-field').innerHTML =
                 cardsTableGenerate(backSideCards.length)),
-        1000
+        5000
     )
     headerRenderer({ element: document.querySelector('.header-component') })
 }
