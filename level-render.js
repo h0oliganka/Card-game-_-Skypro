@@ -1,5 +1,6 @@
 import { cardsTableGenerate } from './cards-table.js'
 import { headerRenderer } from './header.js'
+
 export function levelPageRenderer({ app }) {
     const appHtml = `<div class="header-component"></div>
     <div class="card-field"> </div>
@@ -10,11 +11,11 @@ export function levelPageRenderer({ app }) {
     }
     console.log(backSideCards)
     app.innerHTML = appHtml
-    document.querySelector('.card-field').innerHTML = backSideCards.join('')
+    document.querySelector('.card-field').innerHTML = cardsTableGenerate(backSideCards.length)
     setTimeout(
         () =>
             (document.querySelector('.card-field').innerHTML =
-                cardsTableGenerate(backSideCards.length)),
+            (backSideCards.join(''))),
         5000
     )
     headerRenderer({ element: document.querySelector('.header-component') })

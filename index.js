@@ -1,6 +1,7 @@
 import { START_PAGE, LEVEL_PAGE } from './routes.js'
 import { startPageRenderer } from './start-page.js'
 import { levelPageRenderer } from './level-render.js'
+import './style.css'
 
 const suitArray = ['Ч', 'П', 'Б', 'К']
 const cardValueArray = ['A', 'K', 'Q', 'J', '10', '9', '8', '7', '6']
