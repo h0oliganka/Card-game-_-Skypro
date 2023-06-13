@@ -20,6 +20,9 @@ body {
 .game-wrapper {
     padding-left: calc(50vw - 490px);
     padding-right: calc(50vw - 490px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .level-choice {
@@ -120,6 +123,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-top: 22px;
+    width: 980px;
 }
 
 .timer {
@@ -148,9 +152,7 @@ body {
 }
 
 .card-field {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: inline-grid;
     gap: 15px;
     margin-top: 35px;
 }
@@ -161,6 +163,23 @@ body {
     background: #fff;
     border-radius: 4px;
     position: relative;
+    cursor: pointer;
+}
+
+.grid_1 {
+    grid-template-columns: repeat(3, 1fr);
+}
+  
+.grid_2 {
+    grid-template-columns: repeat(6, 1fr);
+}
+  
+.grid_3 {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.card-back {
+    cursor: pointer;
 }
 
 .card-value-up {
