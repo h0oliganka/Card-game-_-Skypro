@@ -12,10 +12,10 @@ export function levelPageRenderer({ app }) {
     console.log(backSideCards)
     app.innerHTML = appHtml
     const cardTable = cardsTableGenerate(backSideCards.length);
-    document.querySelector('.card_field').innerHTML = cardTable.join('');
+    document.querySelector('.card-field').innerHTML = cardTable.join('');
 
     setTimeout(() => {
-        document.querySelector('.card_field').innerHTML =
+        document.querySelector('.card-field').innerHTML =
             backSideCards.join('');
         let clickedCard = [];
         for (const card of document.querySelectorAll('.card')) {
@@ -25,7 +25,7 @@ export function levelPageRenderer({ app }) {
                 let targetCard = document.createElement('div');
                 targetCard.innerHTML = cardTable[card.dataset.id];
                 card.replaceWith(targetCard);
-                if (clickedCard.length === 2) {
+                if (clickedCard.length === 6) {
                     if (clickedCard[0] === clickedCard[1]) {
                         setTimeout(function () {
                             alert('Вы победили!');
