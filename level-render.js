@@ -48,6 +48,6 @@ export function levelPageRenderer({ app }) {
                 }
             })
         }
-    }, 1000)
+    }, 5000)
     headerRenderer({ element: document.querySelector('.header-component') })
 }
