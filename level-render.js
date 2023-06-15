@@ -40,8 +40,7 @@ export function levelPageRenderer({ app }) {
                     }
                 }
                 if (
-                    controlArray.length ===
-                    3 * Number(localStorage.getItem('Level'))
+                    controlArray.length === 3 * Number(localStorage.getItem('Level'))
                 ) {
                     let finishTime = Number(new Date())
                     let fullGameTime = (finishTime - startTime) / 1000
