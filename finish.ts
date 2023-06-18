@@ -1,10 +1,14 @@
 import { renderApp } from './index'
 import { time } from './time'
 
-export function resultRenderer({ app }, result, fullGameTime) {
+export function resultRenderer(
+    { app }: { app: HTMLElement },
+    result: string,
+    fullGameTime: number
+) {
     app.appendChild(document.createElement('div')).classList.add('opacity')
     app.appendChild(document.createElement('div')).classList.add('result')
-    (document.querySelector('.result')).innerHTML = `
+    ;(document.querySelector('.result') as HTMLElement).innerHTML = `
         <img src="${
             result === 'win' ? './img/win.svg' : './img/dead.svg'
         }" class="result-svg" alt="win">

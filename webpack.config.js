@@ -3,8 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
+    devtool:
+        process.env.NODE_ENV === 'production'
+            ? 'hidden-source-map'
+            : 'source-map',
     mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
-    entry: './index.js',
+    entry: './index.ts',
     devServer: {
         static: {
             directory: path.join(__dirname, 'dist'),
