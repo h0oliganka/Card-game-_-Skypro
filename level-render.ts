@@ -1,8 +1,8 @@
-import { cardsTableGenerate } from './cards-table.js'
-import { headerRenderer } from './header.js'
-import { resultRenderer } from './finish.js'
+import { cardsTableGenerate } from './cards-table'
+import { headerRenderer } from './header'
+import { resultRenderer } from './finish'
 
-export function levelPageRenderer({ app }: {app:HTMLElement}) {
+export function levelPageRenderer({ app }: { app: HTMLElement }) {
     const appHtml = `<div class="header-component"></div>
     <div class="card-field grid-${localStorage.getItem('Level')}"> </div>
 `
@@ -14,15 +14,17 @@ export function levelPageRenderer({ app }: {app:HTMLElement}) {
     }
     console.log(backSideCards)
     app.innerHTML = appHtml
-    const cardTable = cardsTableGenerate(backSideCards.length);
-    (document.querySelector('.card-field') as HTMLElement).innerHTML = cardTable.join('');
+    const cardTable = cardsTableGenerate(backSideCards.length)
+    ;(document.querySelector('.card-field') as HTMLElement).innerHTML =
+        cardTable.join('')
 
     setTimeout(() => {
-        (document.querySelector('.card-field') as HTMLElement).innerHTML = backSideCards.join('')
-        let clickedCard: string[] = [];
-        let controlArray: string[] = [];
+        ;(document.querySelector('.card-field') as HTMLElement).innerHTML =
+            backSideCards.join('')
+        let clickedCard: string[] = []
+        let controlArray: string[] = []
         let startTime = Number(new Date())
-        for (const card of (document.querySelectorAll('.card') as any)) {
+        for (const card of document.querySelectorAll('.card') as any) {
             card.addEventListener('click', (event) => {
                 event.stopPropagation()
                 clickedCard.push(cardTable[card.dataset.id])
@@ -50,5 +52,7 @@ export function levelPageRenderer({ app }: {app:HTMLElement}) {
             })
         }
     }, 5000)
-    headerRenderer({ element: (document.querySelector('.header-component') as HTMLElement) })
+    headerRenderer({
+        element: document.querySelector('.header-component') as HTMLElement,
+    })
 }

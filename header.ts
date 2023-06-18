@@ -1,5 +1,4 @@
 import { renderApp } from '.';
-import { startPageRenderer } from './start-page'
 
 export function headerRenderer({ element }: { element: HTMLElement }) {
     element.innerHTML = `<header class="header">

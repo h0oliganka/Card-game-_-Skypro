@@ -1,6 +1,6 @@
-import { START_PAGE, LEVEL_PAGE } from './routes.js'
-import { startPageRenderer } from './start-page.js'
-import { levelPageRenderer } from './level-render.js'
+import { START_PAGE, LEVEL_PAGE } from './routes'
+import { startPageRenderer } from './start-page'
+import { levelPageRenderer } from './level-render'
 import './style.css'
 
 const suitArray = ['Ч', 'П', 'Б', 'К']
