@@ -1,5 +1,5 @@
-import { renderApp } from './index.js'
-import { time } from './time.js'
+import { renderApp } from './index'
+import { time } from './time'
 
 export function resultRenderer({ app }, result, fullGameTime) {
     app.appendChild(document.createElement('div')).classList.add('opacity')

@@ -1,6 +1,6 @@
 import { cards } from './index'
 
-export function cardsTableGenerate(value) {
+export function cardsTableGenerate(value: number) {
     const randomCards = [];
     for (let i = 0; i < value / 2; i++) {
         randomCards.push(

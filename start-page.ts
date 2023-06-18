@@ -1,4 +1,4 @@
-import { renderApp } from './index.js'
+import { renderApp } from './index'
 
 export function startPageRenderer({ app }) {
     const appHtml = `<div class="level-choice-wrapper">

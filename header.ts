@@ -1,4 +1,5 @@
-import { startPageRenderer } from './start-page.js'
+import { renderApp } from '.';
+import { startPageRenderer } from './start-page'
 
 export function headerRenderer({ element }: { element: HTMLElement }) {
     element.innerHTML = `<header class="header">
@@ -18,5 +19,5 @@ export function headerRenderer({ element }: { element: HTMLElement }) {
     </header>`
     ;(
         document.querySelector('.restart-button') as HTMLElement
-    ).addEventListener('click', () => startPageRenderer())
+    ).addEventListener('click', () => renderApp('level'));
 }

@@ -2,11 +2,11 @@ import { cardsTableGenerate } from './cards-table.js'
 import { headerRenderer } from './header.js'
 import { resultRenderer } from './finish.js'
 
-export function levelPageRenderer({ app }) {
+export function levelPageRenderer({ app }: {app:HTMLElement}) {
     const appHtml = `<div class="header-component"></div>
     <div class="card-field grid-${localStorage.getItem('Level')}"> </div>
 `
-    let backSideCards = []
+    let backSideCards: string[] = []
     for (let i = 0; i < 6 * Number(localStorage.getItem('Level')); i++) {
         backSideCards.push(
             `<div class="card" data-id='${i}'><img class="card-back" src="./img/рубашка.svg" alt="card-backside"></div>`
@@ -14,13 +14,13 @@ export function levelPageRenderer({ app }) {
     }
     console.log(backSideCards)
     app.innerHTML = appHtml
-    const cardTable = cardsTableGenerate(backSideCards.length)
-    (document.querySelector('.card-field')).innerHTML = cardTable.join('')
+    const cardTable = cardsTableGenerate(backSideCards.length);
+    (document.querySelector('.card-field') as HTMLElement).innerHTML = cardTable.join('');
 
     setTimeout(() => {
         (document.querySelector('.card-field') as HTMLElement).innerHTML = backSideCards.join('')
-        let clickedCard = []
-        let controlArray = []
+        let clickedCard: string[] = [];
+        let controlArray: string[] = [];
         let startTime = Number(new Date())
         for (const card of (document.querySelectorAll('.card') as any)) {
             card.addEventListener('click', (event) => {
@@ -50,5 +50,5 @@ export function levelPageRenderer({ app }) {
             })
         }
     }, 5000)
-    headerRenderer({ element: document.querySelector('.header-component') })
+    headerRenderer({ element: (document.querySelector('.header-component') as HTMLElement) })
 }

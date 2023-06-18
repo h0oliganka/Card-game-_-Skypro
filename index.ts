@@ -14,7 +14,7 @@ for (const suit of suitArray) {
 }
 
 export function renderApp(page) {
-    const app = document.getElementById('app')
+    const app = document.getElementById('app') as HTMLElement;
     if (page === START_PAGE) {
         startPageRenderer({ app })
     }
