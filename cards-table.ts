@@ -1,4 +1,4 @@
-import { cards } from './index.js'
+import { cards } from './index'
 
 export function cardsTableGenerate(value) {
     const randomCards = [];

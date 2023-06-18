@@ -4,7 +4,7 @@ import { time } from './time.js'
 export function resultRenderer({ app }, result, fullGameTime) {
     app.appendChild(document.createElement('div')).classList.add('opacity')
     app.appendChild(document.createElement('div')).classList.add('result')
-    document.querySelector('.result').innerHTML = `
+    (document.querySelector('.result')).innerHTML = `
         <img src="${
             result === 'win' ? './img/win.svg' : './img/dead.svg'
         }" class="result-svg" alt="win">
@@ -15,7 +15,7 @@ export function resultRenderer({ app }, result, fullGameTime) {
         <p class="result-text-time">${time(fullGameTime)}</p>
         <button type="submit" class="restart-button">Играть снова</button>
         `
-    for (const button of document.querySelectorAll('.restart-button')) {
+    for (const button of document.querySelectorAll('.restart-button') as any) {
         button.addEventListener('click', () => renderApp('start'))
     }
 }

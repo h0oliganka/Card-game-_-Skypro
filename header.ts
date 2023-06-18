@@ -1,6 +1,6 @@
 import { startPageRenderer } from './start-page.js'
 
-export function headerRenderer({ element }) {
+export function headerRenderer({ element }: { element: HTMLElement }) {
     element.innerHTML = `<header class="header">
     <div class="timer">
         <div class="timer-min">
@@ -16,8 +16,7 @@ export function headerRenderer({ element }) {
         Начать заново
     </button>
     </header>`
-
-    document.querySelector('.restart-button').addEventListener('click', () => {
-        startPageRenderer({ app })
-    })
+    ;(
+        document.querySelector('.restart-button') as HTMLElement
+    ).addEventListener('click', () => startPageRenderer())
 }

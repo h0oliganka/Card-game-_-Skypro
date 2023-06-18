@@ -15,14 +15,14 @@ export function levelPageRenderer({ app }) {
     console.log(backSideCards)
     app.innerHTML = appHtml
     const cardTable = cardsTableGenerate(backSideCards.length)
-    document.querySelector('.card-field').innerHTML = cardTable.join('')
+    (document.querySelector('.card-field')).innerHTML = cardTable.join('')
 
     setTimeout(() => {
-        document.querySelector('.card-field').innerHTML = backSideCards.join('')
+        (document.querySelector('.card-field') as HTMLElement).innerHTML = backSideCards.join('')
         let clickedCard = []
         let controlArray = []
         let startTime = Number(new Date())
-        for (const card of document.querySelectorAll('.card')) {
+        for (const card of (document.querySelectorAll('.card') as any)) {
             card.addEventListener('click', (event) => {
                 event.stopPropagation()
                 clickedCard.push(cardTable[card.dataset.id])

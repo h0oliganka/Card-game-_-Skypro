@@ -20,13 +20,13 @@ export function startPageRenderer({ app }) {
 
     app.innerHTML = appHtml
 
-    for (const input of document.querySelectorAll('input')) {
+    for (const input of (document.querySelectorAll('input') as any)) {
         input.addEventListener('click', () => {
             localStorage.setItem('Level', `${input.value}`)
         })
     }
 
-    document.querySelector('.start-button').addEventListener('click', () => {
+    (document.querySelector('.start-button')as HTMLElement).addEventListener('click', () => {
         renderApp('level')
     })
 }
