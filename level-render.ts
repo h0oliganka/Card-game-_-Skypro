@@ -1,20 +1,21 @@
 import { cardsTableGenerate } from './cards-table'
 import { headerRenderer } from './header'
 import { resultRenderer } from './finish'
+import { cards } from '.';
 
 export function levelPageRenderer({ app }: { app: HTMLElement }) {
     const appHtml = `<div class="header-component"></div>
     <div class="card-field grid-${localStorage.getItem('Level')}"> </div>
 `
-    let backSideCards: string[] = []
+    let backSideCards: string[] = [];
     for (let i = 0; i < 6 * Number(localStorage.getItem('Level')); i++) {
         backSideCards.push(
             `<div class="card" data-id='${i}'><img class="card-back" src="./img/рубашка.svg" alt="card-backside"></div>`
         )
     }
     console.log(backSideCards)
-    app.innerHTML = appHtml
-    const cardTable = cardsTableGenerate(backSideCards.length)
+    app.innerHTML = appHtml;
+    const cardTable = cardsTableGenerate(backSideCards.length, cards)
     ;(document.querySelector('.card-field') as HTMLElement).innerHTML =
         cardTable.join('')
 
